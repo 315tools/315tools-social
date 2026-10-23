@@ -16,7 +16,7 @@ def main() -> int:
     cfg = load_config()
     tok, uid = os.environ.get(cfg["token_secret"], ""), os.environ.get(cfg["user_id_secret"], "")
     if not tok or not uid:
-        print("Secrets 없음 (IG_TOKEN / IG_USER_ID)")
+        print("Secrets 없음 (IG_TOKEN_TOOLS / IG_USER_ID)")
         return 1
     me = requests.get(f"{GRAPH}/me", params={"fields": "user_id,username,account_type,followers_count,media_count", "access_token": tok}, timeout=30).json()
     if "error" in me:

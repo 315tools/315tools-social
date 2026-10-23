@@ -1,6 +1,6 @@
-"""인스타 장기 토큰(60일)을 새로 받아 GitHub Secret IG_TOKEN 을 갱신한다. 매달 1일 Actions 가 실행.
+"""인스타 장기 토큰(60일)을 새로 받아 GitHub Secret IG_TOKEN_TOOLS 을 갱신한다. 매달 1일 Actions 가 실행.
 
-필요: IG_TOKEN, 그리고 이 저장소 Secrets 를 고칠 수 있는 GH_PAT (fine-grained, Secrets 쓰기 권한만)
+필요: IG_TOKEN_TOOLS, 그리고 이 저장소 Secrets 를 고칠 수 있는 GH_PAT (fine-grained, Secrets 쓰기 권한만)
 """
 from __future__ import annotations
 

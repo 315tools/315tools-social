@@ -29,7 +29,7 @@
 
 | 이름 | 내용 |
 | --- | --- |
-| `IG_TOKEN` | @315tools_official 인스타 로그인 방식 장기 토큰 |
+| `IG_TOKEN_TOOLS` | @315tools_official 인스타 로그인 방식 장기 토큰 |
 | `IG_USER_ID` | @315tools_official 인스타 사용자 ID |
 | `GH_PAT` | 토큰 자동 갱신용 (이 저장소 Secrets 쓰기 권한만 준 fine-grained 토큰) |
 

@@ -19,7 +19,7 @@ jobs:
       - run: pip install requests
       - name: 계정·토큰 확인
         env:
-          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+          IG_TOKEN_TOOLS: ${{ secrets.IG_TOKEN_TOOLS }}
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
         run: python scripts/check_account.py
       - name: 발행 대기 목록

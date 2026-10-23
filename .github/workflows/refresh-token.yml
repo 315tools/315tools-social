@@ -16,5 +16,5 @@ jobs:
       - run: pip install requests
       - env:
           GH_PAT: ${{ secrets.GH_PAT }}
-          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+          IG_TOKEN_TOOLS: ${{ secrets.IG_TOKEN_TOOLS }}
         run: python scripts/refresh_tokens.py

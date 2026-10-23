@@ -1,7 +1,7 @@
 {
   "site_base": "https://OWNER.github.io/315tools-social",
   "ig_username": "315tools_official",
-  "token_secret": "IG_TOKEN",
+  "token_secret": "IG_TOKEN_TOOLS",
   "user_id_secret": "IG_USER_ID",
   "times": {
     "card": "21:00",
