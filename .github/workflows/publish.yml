@@ -1,0 +1,44 @@
+name: 인스타 발행
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"   # 30분마다 발행 시간이 된 게시물 확인 (카드 21:00, 릴스 12:00 KST)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install requests
+
+      - name: 발행
+        id: publish
+        continue-on-error: true
+        env:
+          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+        run: python scripts/publish.py
+
+      - name: 결과 저장
+        run: |
+          git config user.name "315tools-social bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add -A docs
+          git diff --cached --quiet || { git commit -m "발행 결과 반영 $(date +%F_%H%M)"; git pull --rebase; git push; }
+
+      - name: 실패 알림
+        if: steps.publish.outcome == 'failure'
+        run: |
+          echo "발행 실패가 있습니다. post.json 의 result.error 를 확인하세요."
+          exit 1
