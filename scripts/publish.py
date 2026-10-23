@@ -118,10 +118,11 @@ def publish(post: dict, folder_rel: str, cfg: dict) -> str:
 
 def due_posts(cfg: dict):
     now = now_kst()
-    start = cfg.get("start_date", "0000-00-00")
+    starts = cfg.get("start_date", "0000-00-00")
     for path, post in iter_posts():
         if post.get("status") in ("published", "hold"):
             continue
+        start = starts.get(post["type"], "0000-00-00") if isinstance(starts, dict) else starts
         if post["date"] < start:
             continue
         if post.get("attempts", 0) >= MAX_ATTEMPTS:
