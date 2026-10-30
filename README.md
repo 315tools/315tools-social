@@ -41,3 +41,4 @@
 | `scripts/publish.py` | 발행 (`--dry-run` 으로 대기 목록만 확인) |
 | `scripts/check_account.py` | 토큰·계정·발행 한도 확인 (게시 안 함) |
 | `scripts/refresh_tokens.py` | 토큰 매달 갱신 |
+| `kit/` | 카드뉴스·릴스 제작 양식 (RUNBOOK, 생성 스크립트, 릴스 시나리오) |

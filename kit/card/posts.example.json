@@ -1,0 +1,61 @@
+[
+ {
+  "id": "w1-1-intro",
+  "theme": "navy",
+  "kicker": "Meet 315tools",
+  "title": "6 free tools. Zero uploads.",
+  "body": "",
+  "bullets": [
+   "PDF: merge, split, compress, sign",
+   "Image: resize, compress, HEIC",
+   "Calc: loan, VAT, take-home pay",
+   "Paperwork: invoices, quotes",
+   "Font: your handwriting as a font",
+   "Party: wheel, dice, coin flip"
+  ],
+  "cta": "Free · No sign-up · No limits",
+  "url": "315tools.com"
+ },
+ {
+  "id": "w1-2-privacy",
+  "theme": "paper",
+  "kicker": "Why it's safe",
+  "title": "Your files stay on your device.",
+  "body": "Most online converters upload your files to a server. 315tools doesn't.",
+  "bullets": [
+   "Everything is processed inside your browser",
+   "Nothing is sent, stored or seen by us",
+   "Turn off Wi-Fi after the page loads. It still works."
+  ],
+  "cta": "Private by design",
+  "url": "315tools.com"
+ },
+ {
+  "id": "w1-3-merge-pdf",
+  "theme": "paper",
+  "kicker": "Quick tip",
+  "title": "Merge PDFs on your phone in 30 seconds.",
+  "numbered": true,
+  "bullets": [
+   "Open pdf.315tools.com",
+   "Pick your PDF files and drag to reorder",
+   "Tap Merge and save the new PDF"
+  ],
+  "cta": "No app to install",
+  "url": "pdf.315tools.com"
+ },
+ {
+  "id": "w1-4-compress-kb",
+  "theme": "navy",
+  "kicker": "Quick tip",
+  "title": "Photo too big? Shrink it to an exact KB.",
+  "numbered": true,
+  "bullets": [
+   "Open image.315tools.com, Compress tab",
+   "Type a target size, like 200 KB",
+   "Download the smaller photo"
+  ],
+  "cta": "For forms & applications",
+  "url": "image.315tools.com"
+ }
+]
