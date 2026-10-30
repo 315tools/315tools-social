@@ -1,0 +1,10 @@
+{
+ "date": "2026-11-02",
+ "type": "card",
+ "topic": "사진 EXIF(위치정보) 지우기",
+ "slides": [
+  "01.jpg"
+ ],
+ "caption": "Your photos may show where you live 📍\n\nPhotos can carry hidden EXIF data: GPS location, camera model and the date taken. Check it before you post or send.\n\n1️⃣ Open image.315tools.com and choose Remove EXIF\n2️⃣ See what's hidden in your photo\n3️⃣ Save a clean copy with the same quality\n\nYour photo stays on your device the whole time.\n\nLink in bio 👆\n\n#privacy #EXIF #onlinesafety #phototips #freetools #315tools ",
+ "status": "ready"
+}
