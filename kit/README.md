@@ -10,7 +10,7 @@
 | `card/posts.example.json` | posts.json 작성 예시 |
 | `reels/RUNBOOK.md` | 릴스 규칙·순서·시나리오 형식·사용한 주제 |
 | `reels/rec/` | 녹화·음성·합성 스크립트 |
-| `reels/scn/` | 검증된 시나리오 14편 (1~2주차) |
+| `reels/scn/` | 검증된 시나리오 21편 (1~3주차) |
 
 발행 자체(`docs/posts/…` → 인스타)는 저장소 루트 `README.md` 참고.
 

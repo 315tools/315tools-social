@@ -27,14 +27,15 @@
 | `kit/reels/rec/probe.js`, `probe_tab.js` | 새 시나리오용 버튼·입력칸 선택자 찾기 |
 | `kit/reels/rec/sheet.sh` | 영상 10장 미리보기(검사용) |
 | `kit/reels/rec/make_samples.py` | 데모 파일(가상 PDF·사진·로고) 생성 |
-| `kit/reels/scn/*.json` | 검증된 시나리오 14편 |
+| `kit/reels/scn/*.json` | 검증된 시나리오 21편 (1~3주차) |
 
 ## 만드는 순서
 
-1. 사이트 저장소 `315tools/315tools` 를 **읽기 전용**으로 clone (녹화용, 쓰기 금지)
+1. 사이트 저장소 `315tools/315tools` 준비 (녹화용, **쓰기 금지**). 예약 작업에 리포지토리로 붙어 있으면 이미 clone 돼 있으니 그 경로를 쓰고(`ls ..` 로 확인), 없으면:
    ```bash
    git clone --depth 1 https://github.com/315tools/315tools /home/claude/315tools
    ```
+   아래 `serve.py` 인자는 그 저장소의 `sites` 폴더 경로로 바꿔 쓴다.
 2. 작업 폴더 준비 (저장소 밖, 예: `/home/claude/rec`)
    ```bash
    mkdir -p /home/claude/rec && cp -r kit/reels/rec/* /home/claude/rec/ && cp -r kit/reels/scn /home/claude/rec/
@@ -54,11 +55,14 @@
 3. 이번 주 7편 고르기: `scn/` 에서 안 쓴 것 우선, 모자라면 새 시나리오 작성
    - `node probe.js http://127.0.0.1:<포트>/ shot.png` 로 버튼·입력칸 선택자 확인 후 작성
    - 결과 화면 문구는 미리 한 번 실행해 확인해서 `waitFor` 에 사용
+   - 사이트가 여러 언어/나라 블록을 숨겨 두고 있어(예: paperwork 국가 가이드) `text` 선택자는 화면에 보이는 요소만 잡음. 대문자로 보이는 제목도 실제 textContent는 소문자일 수 있음(CSS uppercase)
 4. 한 편씩 **순서대로** 만들기 (동시에 돌리면 느려져 영상이 늘어짐)
    ```bash
    KOKORO_DIR=dl ./make_reel.sh scn/<id>.json reels/<id>.mp4
    ```
 5. **검사**: `./sheet.sh reels/<id>.mp4 sheet.png` 를 직접 열어 확인 — 스포트라이트가 누르는 버튼 위에 있는지, 자막이 카드·버튼을 가리지 않는지, 결과 화면이 나오는지, 길이 40초 이하. 문제 있으면 시나리오 고쳐 다시.
+   - 화면 아래쪽 칸을 point 하면 자막이 위로 올라가고(`top`), 다음 장면 첫 순간에도 위에 남아 있음 → 다음 장면 대상이 위쪽이면 첫 동작에 `{"do":"mainEval","js":"document.getElementById('rv-sub').classList.remove('top')"}`
+   - 입력칸이 화면 밖이면 `type`의 focus가 페이지를 스크롤해 강조가 어긋남 → point 전에 `scroll`로 먼저 보이게
 6. 날짜별 폴더에 넣기: `docs/posts/<YYYY-MM-DD>/reel/reel.mp4` + `post.json`
    ```json
    {"date":"2026-11-07","type":"reel","topic":"<시나리오 id>","video":"reel.mp4","caption":"<영문 본문>","status":"ready"}
@@ -79,19 +83,22 @@
 - 동작: `scroll{sel,main?,text?,offset,ms}` · `point{sel,main?,text?,up?,label,ms}` · `press{noclick?,keep?,ms}` · `type{sel,main?,text,cps,nochange?}` · `select{sel,main?,value}` · `upload{sel,files:["$SAMPLES/..."]}` · `waitFor{text|re|gone,timeout,ms}` · `draw{sel,glyphs:["A","B","C"] 또는 ["sig"],next}` · `drag{sel,label,to:{sel,fx,fy}}` · `unpoint` · `wait{ms}` · `frameEval{js}` · `mainEval{js}` · `clickLoop{sel}`
   - `main:true` = 본문(도구 선택 패널 등), 없으면 도구 칸(iframe). `text` = 그 글자를 포함한 가장 안쪽의 보이는 요소, `up:n` = 부모로 n단계
   - 탭 버튼을 누르면 사이트가 스스로 스크롤하므로 press 뒤 강조는 자동으로 걷힘(`keep:true`로 유지)
-  - qr 사이트 탭(`a.tab`)은 누르면 다른 페이지(/wifi/ 등)로 이동 → `url`을 그 페이지로 시작하고 탭은 `press{noclick:true}`
+  - qr 사이트 탭(`a.tab`)은 누르면 다른 페이지(/wifi/, /vcard/ 등)로 이동 → `url`을 그 페이지로 시작하고 탭은 `press{noclick:true}`. 연락처 카드 경로는 `/vcard/`
+  - pdf 사이트는 도구마다 SAMPLE 파일이 미리 들어 있음 → 여러 파일 도구(merge·split)는 prep `clickLoop button[data-a=rm]`, 안내 상자는 `details.guide` 닫기
+  - `point` 에 `fin:"corner"` 를 주면 손가락이 요소 오른쪽 아래에 놓여 QR·미리보기를 가리지 않음
   - `brand:false` 면 브랜드 마무리 생략, `brand_say` 로 마무리 음성 변경
 
 ## 알려진 사이트 버그 (2026-10-23)
 
 - paperwork 패킹리스트: 포장 수량 입력 중에는 CBM 칸이 맞게(예: 4.32) 나오지만 칸을 벗어나면(change) 0으로 돌아감. 미리보기 합계는 정확. → 영상은 `type{nochange:true}` 로 입력 중 상태를 보여 줌. 사이트가 고쳐지면 nochange 빼도 됨.
+- (2026-10-30) paperwork 영수증(Receipt): 기본 세율 10%가 "Amount received"에 더해지는데(예: 품목 $1,200 → $1,320) 미리보기에 소계·세금 줄이 없음. 고쳐지기 전엔 영수증 편 만들지 않기.
 
 ## 사용한 주제
 
 - **1주차** 10/17~10/23: pdf-merge(토) / game-wheel(일) / image-compress-kb(월) / calc-vat(화) / paperwork-quote(수) / font-handwriting(목) / pdf-compress(금)
 - **2주차** 10/24~10/30 (로고 마무리·'three one five' 발음 첫 적용, 첫 GitHub 자동 발행): qr-wifi(토) / game-namedraw(일) / pdf-sign(월) / image-social(화) / calc-tip(수) / paperwork-packing(목) / qr-logo(금)
-- **3주차** 10/31~11/6: 10/30 예약 실행 결과 확인 중 (이 줄은 확인 후 갱신)
+- **3주차** 10/31~11/6 (10/30 예약 실행은 push 403 → 10/31 대화에서 같은 시나리오로 다시 녹화해 등록): pdf-split(토) / game-dice(일) / image-exif(월) / calc-discount(화) / qr-contact(수) / paperwork-customs(목) / pdf-watermark(금)
 
 ### 아직 안 쓴 기능 (아이디어)
 
-QR 텍스트·연락처·이메일·문자·바코드·QR 읽기 / PDF 나누기·워터마크·페이지 번호·비밀번호·텍스트 추출·양식 채우기·비교 / 이미지 크기 조절·자르기·HEIC→JPG·배경 제거·얼굴 흐리기·EXIF 제거·GIF·콜라주(증명사진은 실제 얼굴 사진 필요 — 보류) / 계산기 대출·복리·퍼센트·할인·실수령액·손익분기·마진·저축·인플레이션·은퇴 / 서류 인보이스·발주서·영수증·국가별 통관 가이드 / 게임 주사위·랜덤 숫자·동전·세계 미니게임 / 폰트 인쇄 시트 촬영 방식·한글
+QR 텍스트·이메일·문자·바코드·QR 읽기 / PDF 페이지 번호·비밀번호·텍스트 추출·양식 채우기·비교·페이지 정리·PDF→이미지·이미지→PDF / 이미지 크기 조절·자르기·HEIC→JPG·배경화면·배경 제거·얼굴 흐리기·GIF·콜라주·파비콘·색 추출(증명사진은 실제 얼굴 사진 필요 — 보류) / 계산기 대출·복리·퍼센트·실수령액·손익분기·마진·저축·인플레이션·은퇴 / 서류 인보이스·발주서·납품서·세금계산서(영수증은 버그 고쳐진 뒤) / 게임 랜덤 숫자·동전·세계 미니게임 / 폰트 인쇄 시트 촬영 방식·한글

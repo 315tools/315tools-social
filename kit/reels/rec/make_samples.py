@@ -51,4 +51,15 @@ c.showPage(); c.save()
 lm = Image.new('RGBA', (400, 400), (0, 0, 0, 0)); d = ImageDraw.Draw(lm)
 d.rounded_rectangle((20, 20, 380, 380), 90, fill=(37, 99, 235)); d.polygon([(90, 300), (200, 100), (310, 300)], fill='white'); d.polygon([(170, 300), (240, 180), (310, 300)], fill=(191, 219, 254))
 lm.save(D + '/logo-mark.png')
+# 6-page catalog (pdf-split)
+c = canvas.Canvas(D + '/catalog.pdf', pagesize=A4)
+for i, (n, col) in enumerate(zip(['Cover', 'Price list', 'Order form', 'Terms', 'Contact', 'Notes'], [(.96, .65, .14), (.11, .17, .29), (.37, .4, .46), (.15, .39, .92), (.2, .6, .4), (.8, .3, .3)])):
+    c.setFillColorRGB(*col); c.rect(0, 700, 595, 142, fill=1, stroke=0); c.setFillColorRGB(1, 1, 1); c.setFont('Helvetica-Bold', 44); c.drawString(50, 750, n)
+    c.setFillColorRGB(.2, .2, .2); c.setFont('Helvetica', 20); c.drawString(50, 640, f'Blue Peak Trading - Catalog page {i+1}'); c.showPage()
+c.save()
+# photo with GPS + camera EXIF (image-exif)
+from PIL.ExifTags import IFD
+ex = Image.Exif(); ex[0x010F] = 'Fictional Camera Co'; ex[0x0110] = 'FC-100'; ex[0x0132] = '2026:10:12 14:32:10'
+g = ex.get_ifd(IFD.GPSInfo); g.update({1: 'N', 2: (37.0, 33.0, 58.0), 3: 'E', 4: (126.0, 58.0, 41.0)}); ex[0x8825] = g
+im.resize((2016, 1512)).save(D + '/trip-photo.jpg', quality=92, exif=ex)
 print(sorted(os.listdir(D)))
