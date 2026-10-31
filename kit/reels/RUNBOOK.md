@@ -27,7 +27,7 @@
 | `kit/reels/rec/probe.js`, `probe_tab.js` | 새 시나리오용 버튼·입력칸 선택자 찾기 |
 | `kit/reels/rec/sheet.sh` | 영상 10장 미리보기(검사용) |
 | `kit/reels/rec/make_samples.py` | 데모 파일(가상 PDF·사진·로고) 생성 |
-| `kit/reels/scn/*.json` | 검증된 시나리오 21편 (1~3주차) |
+| `kit/reels/scn/*.json` | 검증된 시나리오 28편 (1~4주차) |
 
 ## 만드는 순서
 
@@ -98,6 +98,7 @@
 - **1주차** 10/17~10/23: pdf-merge(토) / game-wheel(일) / image-compress-kb(월) / calc-vat(화) / paperwork-quote(수) / font-handwriting(목) / pdf-compress(금)
 - **2주차** 10/24~10/30 (로고 마무리·'three one five' 발음 첫 적용, 첫 GitHub 자동 발행): qr-wifi(토) / game-namedraw(일) / pdf-sign(월) / image-social(화) / calc-tip(수) / paperwork-packing(목) / qr-logo(금)
 - **3주차** 10/31~11/6 (10/30 예약 실행은 push 403 → 10/31 대화에서 같은 시나리오로 다시 녹화해 등록): pdf-split(토) / game-dice(일) / image-exif(월) / calc-discount(화) / qr-contact(수) / paperwork-customs(목) / pdf-watermark(금)
+- **4주차** 11/7~11/13: qr-email(토) / game-coin(일) / pdf-numbers(월) / image-resize(화) / calc-loan(수) / paperwork-po(목) / calc-margin(금)
 
 ### 아직 안 쓴 기능 (아이디어)
 
