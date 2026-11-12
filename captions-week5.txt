@@ -1,0 +1,115 @@
+=== 2026-11-14 21:00 KST — QR 팁-와이파이 QR(비밀번호 안 불러줘도 접속)
+Share your Wi-Fi without spelling out the password 📶
+
+1️⃣ Open qr.315tools.com and pick Wi-Fi
+2️⃣ Type your network name and password
+3️⃣ Download the code or show it full screen
+
+Guests just point their camera and join. The code is made on your device, never expires, and isn't tracked.
+
+All 7 315tools sites are free, no sign-up.
+
+Link in bio 👆
+
+#wifi #qrcode #qrcodegenerator #guestwifi #hometips #freetools #315tools
+
+[한국어 번역]
+비밀번호 불러주지 않고 와이파이 공유하기. 1) qr.315tools.com 에서 Wi-Fi 선택 2) 네트워크 이름과 비밀번호 입력 3) 코드를 저장하거나 전체 화면으로 보여주기. 손님은 카메라만 대면 접속. 코드는 기기에서 만들어지고 만료·추적 없음. 315tools 7개 사이트 모두 무료, 가입 없음.
+
+=== 2026-11-15 21:00 KST — PDF 워터마크(DRAFT·CONFIDENTIAL 찍기)
+Stamp DRAFT or CONFIDENTIAL on any PDF 🖋️
+
+1️⃣ Open pdf.315tools.com and pick Watermark
+2️⃣ Type your text, then choose layout, size, color and opacity
+3️⃣ Press Add watermark and save
+
+Tip: repeated text is harder to crop out than one line in the middle. Your file never leaves your device.
+
+Link in bio 👆
+
+#pdf #watermark #pdftools #documents #confidential #productivity #315tools
+
+[한국어 번역]
+PDF에 DRAFT·CONFIDENTIAL 찍기. 1) pdf.315tools.com 에서 Watermark 선택 2) 문구 입력 후 배치·크기·색·투명도 선택 3) Add watermark 누르고 저장. 팁: 반복 배치는 가운데 한 줄보다 잘라내기 어려움. 파일은 기기 밖으로 나가지 않음.
+
+=== 2026-11-16 21:00 KST — 사진 얼굴·번호판 가리기(모자이크·블러·검은 박스)
+Hide faces and license plates before you post 🙈
+
+Open image.315tools.com, pick Blur faces, draw a box over each private spot and choose:
+
+▪️ Mosaic
+▪️ Blur
+▪️ Solid black box (safest for ID numbers and screenshots)
+
+Your photo is edited on your device, not uploaded.
+
+Link in bio 👆
+
+#privacy #blurface #photoediting #onlineprivacy #socialmediatips #freetools #315tools
+
+[한국어 번역]
+올리기 전에 얼굴·번호판 가리기. image.315tools.com 의 Blur faces 에서 가릴 곳에 박스를 그리고 모자이크 / 블러 / 검은 박스(주민번호·스크린샷에 가장 안전) 중 선택. 사진은 업로드 없이 기기에서 편집.
+
+=== 2026-11-17 21:00 KST — 마진 vs 마크업(50% 마크업=33% 마진)
+A 50% markup is only a 33% margin 💡
+
+Margin = profit ÷ selling price
+Markup = profit ÷ cost
+
+Example: cost $12, price $25 gives a 52% margin but a 108.33% markup.
+
+The Margin & markup calculator at calc.315tools.com works it out from cost and price, a target margin or a markup.
+
+Link in bio 👆
+
+#smallbusiness #pricing #profitmargin #markup #ecommerce #businesstips #315tools
+
+[한국어 번역]
+50% 마크업은 마진으로는 33%뿐. 마진 = 이익 ÷ 판매가, 마크업 = 이익 ÷ 원가. 예: 원가 $12, 판매가 $25 → 마진 52%, 마크업 108.33%. calc.315tools.com 의 마진·마크업 계산기는 원가와 판매가, 목표 마진, 마크업 중 아는 값으로 계산.
+
+=== 2026-11-18 21:00 KST — 커머셜 인보이스와 패킹리스트 일치
+Your invoice and packing list must match 📦
+
+🧾 Commercial invoice: values, HS codes, origin
+📋 Packing list: packages, weights, measurements
+
+Customs checks both, line for line. Make them together at paperwork.315tools.com and save as PDF, Word or Excel.
+
+Link in bio 👆
+
+#export #import #packinglist #commercialinvoice #customs #tradedocuments #315tools
+
+[한국어 번역]
+인보이스와 패킹리스트는 일치해야 합니다. 커머셜 인보이스: 금액·HS코드·원산지 / 패킹리스트: 포장·중량·치수. 세관은 둘을 줄마다 대조. paperwork.315tools.com 에서 함께 만들고 PDF·워드·엑셀로 저장.
+
+=== 2026-11-19 21:00 KST — 손글씨 폰트 잘 만드는 팁 3가지
+3 tips for a handwriting font that looks like you ✍️
+
+1️⃣ Use a black felt-tip or gel pen, not a pencil or ballpoint
+2️⃣ Write each character in the middle of its box, without touching the edges
+3️⃣ Photograph the sheet from straight above in even light
+
+Then turn it into a .ttf font at font.315tools.com.
+
+Link in bio 👆
+
+#handwriting #handwritingfont #fontmaker #typography #lettering #diy #315tools
+
+[한국어 번역]
+나를 닮은 손글씨 폰트를 위한 팁 3가지. 1) 연필·볼펜 말고 검은 사인펜이나 젤펜 2) 칸 가장자리에 닿지 않게 가운데에 쓰기 3) 균일한 빛에서 바로 위에서 촬영. 그다음 font.315tools.com 에서 .ttf 폰트로.
+
+=== 2026-11-20 21:00 KST — 주사위 최대 6개 굴리기
+No dice? Roll up to 6 on your phone 🎲
+
+1️⃣ Open game.315tools.com and pick Dice
+2️⃣ Choose how many dice, 1 to 6
+3️⃣ Press Roll and see the total
+
+Results come from your device's secure random generator, so nobody can rig them.
+
+Link in bio 👆
+
+#dice #boardgames #partygames #gamenight #randomizer #freetools #315tools
+
+[한국어 번역]
+주사위가 없어도 폰으로 최대 6개까지. 1) game.315tools.com 에서 Dice 선택 2) 주사위 개수 1~6 선택 3) Roll 누르면 합계 표시. 결과는 기기의 보안 난수 생성기로 정해져 조작 불가.
