@@ -27,7 +27,7 @@
 | `kit/reels/rec/probe.js`, `probe_tab.js` | 새 시나리오용 버튼·입력칸 선택자 찾기 |
 | `kit/reels/rec/sheet.sh` | 영상 10장 미리보기(검사용) |
 | `kit/reels/rec/make_samples.py` | 데모 파일(가상 PDF·사진·로고) 생성 |
-| `kit/reels/scn/*.json` | 검증된 시나리오 28편 (1~4주차) |
+| `kit/reels/scn/*.json` | 검증된 시나리오 35편 (1~5주차) |
 
 ## 만드는 순서
 
@@ -93,13 +93,17 @@
 - paperwork 패킹리스트: 포장 수량 입력 중에는 CBM 칸이 맞게(예: 4.32) 나오지만 칸을 벗어나면(change) 0으로 돌아감. 미리보기 합계는 정확. → 영상은 `type{nochange:true}` 로 입력 중 상태를 보여 줌. 사이트가 고쳐지면 nochange 빼도 됨.
 - (2026-10-30) paperwork 영수증(Receipt): 기본 세율 10%가 "Amount received"에 더해지는데(예: 품목 $1,200 → $1,320) 미리보기에 소계·세금 줄이 없음. 고쳐지기 전엔 영수증 편 만들지 않기.
 
+- (2026-11-13) pdf: 도구 선택 패널에서 탭을 바꾸면 주소는 /protect/ 등으로 바뀌지만 아래 안내 글은 "How to merge PDF files"(병합) 그대로 남음. 영상엔 큰 지장 없음.
+- 작업 환경 메모: 시스템 PIL 이 깨져 있으면 `python3 -m pip install --break-system-packages --ignore-installed pillow numpy`. paperwork 는 networkidle0 가 끝나지 않아 probe_tab.js 대신 waitUntil:'load' 로 확인.
+
 ## 사용한 주제
 
 - **1주차** 10/17~10/23: pdf-merge(토) / game-wheel(일) / image-compress-kb(월) / calc-vat(화) / paperwork-quote(수) / font-handwriting(목) / pdf-compress(금)
 - **2주차** 10/24~10/30 (로고 마무리·'three one five' 발음 첫 적용, 첫 GitHub 자동 발행): qr-wifi(토) / game-namedraw(일) / pdf-sign(월) / image-social(화) / calc-tip(수) / paperwork-packing(목) / qr-logo(금)
 - **3주차** 10/31~11/6 (10/30 예약 실행은 push 403 → 10/31 대화에서 같은 시나리오로 다시 녹화해 등록): pdf-split(토) / game-dice(일) / image-exif(월) / calc-discount(화) / qr-contact(수) / paperwork-customs(목) / pdf-watermark(금)
 - **4주차** 11/7~11/13: qr-email(토) / game-coin(일) / pdf-numbers(월) / image-resize(화) / calc-loan(수) / paperwork-po(목) / calc-margin(금)
+- **5주차** 11/14~11/20 (scn 28편 소진 → 새 시나리오 7편): pdf-protect(토) / game-number(일) / image-favicon(월) / calc-compound(화) / qr-sms(수) / paperwork-invoice(목) / pdf-to-image(금)
 
 ### 아직 안 쓴 기능 (아이디어)
 
-QR 텍스트·이메일·문자·바코드·QR 읽기 / PDF 페이지 번호·비밀번호·텍스트 추출·양식 채우기·비교·페이지 정리·PDF→이미지·이미지→PDF / 이미지 크기 조절·자르기·HEIC→JPG·배경화면·배경 제거·얼굴 흐리기·GIF·콜라주·파비콘·색 추출(증명사진은 실제 얼굴 사진 필요 — 보류) / 계산기 대출·복리·퍼센트·실수령액·손익분기·마진·저축·인플레이션·은퇴 / 서류 인보이스·발주서·납품서·세금계산서(영수증은 버그 고쳐진 뒤) / 게임 랜덤 숫자·동전·세계 미니게임 / 폰트 인쇄 시트 촬영 방식·한글
+QR 텍스트·바코드·QR 읽기 / PDF 텍스트 추출·양식 채우기·비교·페이지 정리·이미지→PDF / 이미지 자르기·HEIC→JPG·배경화면·배경 제거·얼굴 흐리기·GIF·콜라주·색 추출(증명사진은 실제 얼굴 사진 필요 — 보류) / 계산기 퍼센트·실수령액·손익분기·마진·저축·인플레이션·은퇴 / 서류 견적송장(Proforma)·납품서·세금계산서(영수증은 버그 고쳐진 뒤) / 게임 세계 미니게임 / 폰트 인쇄 시트 촬영 방식·한글
