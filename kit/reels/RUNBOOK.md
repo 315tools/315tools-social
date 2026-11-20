@@ -27,7 +27,7 @@
 | `kit/reels/rec/probe.js`, `probe_tab.js` | 새 시나리오용 버튼·입력칸 선택자 찾기 |
 | `kit/reels/rec/sheet.sh` | 영상 10장 미리보기(검사용) |
 | `kit/reels/rec/make_samples.py` | 데모 파일(가상 PDF·사진·로고) 생성 |
-| `kit/reels/scn/*.json` | 검증된 시나리오 35편 (1~5주차) |
+| `kit/reels/scn/*.json` | 검증된 시나리오 42편 (1~6주차) |
 
 ## 만드는 순서
 
@@ -86,6 +86,8 @@
   - qr 사이트 탭(`a.tab`)은 누르면 다른 페이지(/wifi/, /vcard/ 등)로 이동 → `url`을 그 페이지로 시작하고 탭은 `press{noclick:true}`. 연락처 카드 경로는 `/vcard/`
   - pdf 사이트는 도구마다 SAMPLE 파일이 미리 들어 있음 → 여러 파일 도구(merge·split)는 prep `clickLoop button[data-a=rm]`, 안내 상자는 `details.guide` 닫기
   - `point` 에 `fin:"corner"` 를 주면 손가락이 요소 오른쪽 아래에 놓여 QR·미리보기를 가리지 않음
+  - pdf 이미지→PDF 는 clickLoop 로 SAMPLE 이 안 지워짐(숨은 다른 도구의 버튼을 먼저 누름) → 탭을 누른 뒤 `frameEval` 로 보이는 `button[data-a=rm]` 만 눌러 지움 (`scn/pdf-img2pdf.json` 참고)
+  - 결과 숫자를 point 할 때 `fin:"corner"` 를 주면 손가락이 숫자를 가리지 않음. game 세계 미니게임의 가위바위보 결과는 매번 달라지므로 승패를 말하지 않기
   - `brand:false` 면 브랜드 마무리 생략, `brand_say` 로 마무리 음성 변경
 
 ## 알려진 사이트 버그 (2026-10-23)
@@ -103,7 +105,8 @@
 - **3주차** 10/31~11/6 (10/30 예약 실행은 push 403 → 10/31 대화에서 같은 시나리오로 다시 녹화해 등록): pdf-split(토) / game-dice(일) / image-exif(월) / calc-discount(화) / qr-contact(수) / paperwork-customs(목) / pdf-watermark(금)
 - **4주차** 11/7~11/13: qr-email(토) / game-coin(일) / pdf-numbers(월) / image-resize(화) / calc-loan(수) / paperwork-po(목) / calc-margin(금)
 - **5주차** 11/14~11/20 (scn 28편 소진 → 새 시나리오 7편): pdf-protect(토) / game-number(일) / image-favicon(월) / calc-compound(화) / qr-sms(수) / paperwork-invoice(목) / pdf-to-image(금)
+- **6주차** 11/21~11/27 (새 시나리오 7편): image-crop(토) / game-world(일) / pdf-img2pdf(월) / calc-percent(화) / qr-barcode(수) / paperwork-proforma(목) / calc-savings(금)
 
 ### 아직 안 쓴 기능 (아이디어)
 
-QR 텍스트·바코드·QR 읽기 / PDF 텍스트 추출·양식 채우기·비교·페이지 정리·이미지→PDF / 이미지 자르기·HEIC→JPG·배경화면·배경 제거·얼굴 흐리기·GIF·콜라주·색 추출(증명사진은 실제 얼굴 사진 필요 — 보류) / 계산기 퍼센트·실수령액·손익분기·마진·저축·인플레이션·은퇴 / 서류 견적송장(Proforma)·납품서·세금계산서(영수증은 버그 고쳐진 뒤) / 게임 세계 미니게임 / 폰트 인쇄 시트 촬영 방식·한글
+QR 텍스트·QR 읽기 / PDF 텍스트 추출·양식 채우기·비교·페이지 정리 / 이미지 HEIC→JPG·배경화면·배경 제거·얼굴 흐리기·GIF·콜라주·색 추출(증명사진은 실제 얼굴 사진 필요 — 보류) / 계산기 실수령액·손익분기·인플레이션·은퇴 / 서류 납품서·세금계산서(영수증은 버그 고쳐진 뒤) / 게임 세계 미니게임의 다른 나라·게임 / 폰트 인쇄 시트 촬영 방식·한글
