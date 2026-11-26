@@ -11,7 +11,7 @@
 - 구성: 인트로 카드 → 실제 사이트 조작 3~4단계(STEP n/N) → 아웃트로 카드(잠금 아이콘, 체크 칩 3개, Link in bio, 주소) → **브랜드 마무리(약 3초)**: 큰 `315tools` 로고(315 흰색·tools 앰버) + 밑줄 + `three · one · five · tools` 칩 + 315tools.com + 음성 "Three, one, five tools." + 차임.
 - **발음 규칙**: 315tools 는 영어로도 "three one five tools"(한글 삼일오툴즈). `say`에 숫자 `315` 금지 — Kokoro가 "three hundred fifteen"으로 읽음. 주소는 "p d f dot three one five tools dot com"처럼 풀어 쓰기. 자막(`sub`)·화면 글자는 그대로 315tools.
 - **누를 곳은 반드시 `point` → `press`**: 스포트라이트 + 앰버 테두리 + 손가락 + 말풍선("Tap ~"). 입력은 `type`으로 한 글자씩.
-- 사이트(pdf·image·calc·paperwork·font·game·qr, 새 사이트가 생기면 포함)를 고르게. 같은 주에 한 사이트 최대 2편. 아래 "사용한 주제"와 겹치지 않게.
+- 사이트(pdf·image·calc·paperwork·font·game·qr·text, 새 사이트가 생기면 포함)를 고르게. text = 315tools.com/text (2026-11-26 추가), game에는 팀 나누기·사다리타기가 추가됨. 같은 주에 한 사이트 최대 2편. 아래 "사용한 주제"와 겹치지 않게.
 - 사이트에 실제로 있는 기능만. 영상 속 결과 수치(예: 3.5 MB → 199 KB)는 실제로 녹화된 값만 말하기.
 - 데모 파일은 가상 데이터만(가상 회사 "Blue Peak Trading" 등). 실존 브랜드·인물 금지.
 
@@ -50,6 +50,7 @@
    python3 serve.py /home/claude/315tools/sites &   # 백그라운드
    ```
    - 포트: home 8080 · pdf 8081 · image 8082 · calc 8083 · paperwork 8084 · font 8085 · game 8086 · qr 8087
+   - 텍스트 도구는 home 사이트 안에 있음: `http://localhost:8080/text/` (도구 바로가기 `#count` `#case` `#clean` `#lines` `#replace` `#compare`). 아웃트로 주소는 `315tools.com/text`.
    - `ls /home/claude/315tools/sites` 에 새 사이트가 있으면 `serve.py` 의 PORTS 에 추가하고 소개 편을 넣기.
    - 작업 환경에서는 *.315tools.com 직접 접속이 막혀 있어 저장소 원본을 띄워 녹화함(= 최신 main과 같은 화면).
 3. 이번 주 7편 고르기: `scn/` 에서 안 쓴 것 우선, 모자라면 새 시나리오 작성
@@ -89,6 +90,9 @@
   - pdf 이미지→PDF 는 clickLoop 로 SAMPLE 이 안 지워짐(숨은 다른 도구의 버튼을 먼저 누름) → 탭을 누른 뒤 `frameEval` 로 보이는 `button[data-a=rm]` 만 눌러 지움 (`scn/pdf-img2pdf.json` 참고)
   - 결과 숫자를 point 할 때 `fin:"corner"` 를 주면 손가락이 숫자를 가리지 않음. game 세계 미니게임의 가위바위보 결과는 매번 달라지므로 승패를 말하지 않기
   - `brand:false` 면 브랜드 마무리 생략, `brand_say` 로 마무리 음성 변경
+
+  - text 도구(2026-11-26): 탭은 바깥 페이지의 `a.tab#tab-count` … `#tab-compare`, 도구는 밀폐 프레임 `#tool-frame` 안. 프레임 안 선택자: 글 상자 `#txt`, 예시 넣기 `#b-sample`, 글자수 `#c-chars`·`#c-nospace`, 제한 `#limit`, 대소문자 `[data-case=upper|lower|title|sentence]`, 정리 `#n-breaks` + `#n-run`, 줄 `[data-line=az|dedupe|number|shuffle]`, 찾아 바꾸기 `#r-find` `#r-with` `#r-run`, 비교 `#d-sample` `#d-run`. 탭을 누른 직후에는 프레임 높이가 바뀌므로 다음 동작 전에 잠깐 기다리기
+  - game 새 탭(2026-11-26): `.tab[data-tab=team]` → `#tNames` `#tCount` `#tRun`(결과 `#tOut .team`), `.tab[data-tab=ladder]` → `#lNames` `#lResults` `#lRun`, 이름 버튼 `#lTop .lname`(누르면 약 2초 애니메이션), 모두 보기 `#lReveal`. 주소 `#team` `#ladder` 로 바로 열림
 
 ## 알려진 사이트 버그 (2026-10-23)
 
