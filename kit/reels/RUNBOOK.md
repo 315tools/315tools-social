@@ -27,7 +27,7 @@
 | `kit/reels/rec/probe.js`, `probe_tab.js` | 새 시나리오용 버튼·입력칸 선택자 찾기 |
 | `kit/reels/rec/sheet.sh` | 영상 10장 미리보기(검사용) |
 | `kit/reels/rec/make_samples.py` | 데모 파일(가상 PDF·사진·로고) 생성 |
-| `kit/reels/scn/*.json` | 검증된 시나리오 42편 (1~6주차) |
+| `kit/reels/scn/*.json` | 검증된 시나리오 49편 (1~7주차) |
 
 ## 만드는 순서
 
@@ -100,7 +100,8 @@
 - (2026-10-30) paperwork 영수증(Receipt): 기본 세율 10%가 "Amount received"에 더해지는데(예: 품목 $1,200 → $1,320) 미리보기에 소계·세금 줄이 없음. 고쳐지기 전엔 영수증 편 만들지 않기.
 
 - (2026-11-13) pdf: 도구 선택 패널에서 탭을 바꾸면 주소는 /protect/ 등으로 바뀌지만 아래 안내 글은 "How to merge PDF files"(병합) 그대로 남음. 영상엔 큰 지장 없음.
-- 작업 환경 메모: 시스템 PIL 이 깨져 있으면 `python3 -m pip install --break-system-packages --ignore-installed pillow numpy`. paperwork 는 networkidle0 가 끝나지 않아 probe_tab.js 대신 waitUntil:'load' 로 확인.
+- (2026-11-27) game 사다리타기: 폰 폭(390px 이하)에서 이름·결과 입력칸 두 개가 카드 오른쪽 테두리 밖으로 8px쯤 삐져나옴(360px 에서는 양쪽으로 더 나옴). 영상엔 큰 지장 없음.
+- 작업 환경 메모: `pip` 과 `python3` 이 서로 다른 파이썬을 가리킬 수 있음 → `python3 -m pip install --break-system-packages ...` 로 설치. 시스템 PIL 이 깨져 있으면 `python3 -m pip install --break-system-packages --ignore-installed pillow numpy`. paperwork 는 networkidle0 가 끝나지 않아 probe_tab.js 대신 waitUntil:'load' 로 확인.
 
 ## 사용한 주제
 
@@ -110,7 +111,8 @@
 - **4주차** 11/7~11/13: qr-email(토) / game-coin(일) / pdf-numbers(월) / image-resize(화) / calc-loan(수) / paperwork-po(목) / calc-margin(금)
 - **5주차** 11/14~11/20 (scn 28편 소진 → 새 시나리오 7편): pdf-protect(토) / game-number(일) / image-favicon(월) / calc-compound(화) / qr-sms(수) / paperwork-invoice(목) / pdf-to-image(금)
 - **6주차** 11/21~11/27 (새 시나리오 7편): image-crop(토) / game-world(일) / pdf-img2pdf(월) / calc-percent(화) / qr-barcode(수) / paperwork-proforma(목) / calc-savings(금)
+- **7주차** 11/28~12/4 (새 시나리오 7편, text 사이트·game 새 탭 첫 소개): text-count(토) / game-team(일) / pdf-text(월) / image-colors(화) / calc-breakeven(수) / game-ladder(목) / qr-text(금)
 
 ### 아직 안 쓴 기능 (아이디어)
 
-QR 텍스트·QR 읽기 / PDF 텍스트 추출·양식 채우기·비교·페이지 정리 / 이미지 HEIC→JPG·배경화면·배경 제거·얼굴 흐리기·GIF·콜라주·색 추출(증명사진은 실제 얼굴 사진 필요 — 보류) / 계산기 실수령액·손익분기·인플레이션·은퇴 / 서류 납품서·세금계산서(영수증은 버그 고쳐진 뒤) / 게임 세계 미니게임의 다른 나라·게임 / 폰트 인쇄 시트 촬영 방식·한글
+텍스트 대소문자·정리·줄 정렬·찾아 바꾸기·비교 / QR 읽기 / PDF 양식 채우기·비교·페이지 정리 / 이미지 HEIC→JPG·배경화면·배경 제거·얼굴 흐리기·GIF·콜라주·변환(증명사진은 실제 얼굴 사진 필요 — 보류) / 계산기 실수령액·인플레이션·은퇴 / 서류 납품서·세금계산서(영수증은 버그 고쳐진 뒤) / 게임 세계 미니게임의 다른 나라·게임 / 폰트 인쇄 시트 촬영 방식·한글
